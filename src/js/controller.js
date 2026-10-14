@@ -1,8 +1,6 @@
 //import icons from 'url:../img/icons.svg'; // Parcel 2
 import 'core-js/stable'; // polyfilling everything else
-import 'regenerator-runtime/runtime'; // polyfilling async/await
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import * as model from './model.js';
+import 'regenerator-runtime/runtime'; // polyfilling async/awaitimport * as model from './model.js';
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
