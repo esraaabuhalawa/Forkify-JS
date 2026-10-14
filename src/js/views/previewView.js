@@ -1,7 +1,6 @@
 import View from './view.js';
 import icons from 'url:../../img/icons.svg';
 import placeholder from 'url:../../img/placeholder.jpg';
-const placeholderURL = placeholder.default;
 
 class PreviewView extends View {
   _parentElement = '';

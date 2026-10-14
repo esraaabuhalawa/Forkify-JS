@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --dist-dir dist --public-url ./"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.16.4",
