@@ -1,14 +1,13 @@
 import View from './view.js';
-import icons from 'url:../../img/icons.svg';
 class PaginationView extends View {
- _parentElement = document.querySelector('.pagination');
+  _parentElement = document.querySelector('.pagination');
 
   addHandlerClick(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--inline');
-        if (!btn) return;
-        const goToPage = +btn.dataset.goto;
-        handler(goToPage);
+      if (!btn) return;
+      const goToPage = +btn.dataset.goto;
+      handler(goToPage);
     });
   }
 
@@ -23,9 +22,7 @@ class PaginationView extends View {
         ${
           !isNext
             ? `
-              <svg class="search__icon">
-                <use href="${icons}#icon-arrow-left"></use>
-              </svg>
+              <i class="search__icon fa-solid fa-arrow-left" aria-hidden="true"></i>
             `
             : ''
         }
@@ -35,16 +32,14 @@ class PaginationView extends View {
         ${
           isNext
             ? `
-              <svg class="search__icon">
-                <use href="${icons}#icon-arrow-right"></use>
-              </svg>
+              <i class="search__icon fa-solid fa-arrow-right" aria-hidden="true"></i>
             `
             : ''
         }
       </button>
     `;
   }
-_generateMarkup() {
+  _generateMarkup() {
     const { page: curPage, results, resultsPerPage } = this._data;
     const numPages = Math.ceil(results.length / resultsPerPage);
 
@@ -65,7 +60,6 @@ _generateMarkup() {
 
     return '';
   }
-
 }
 
 export default new PaginationView();

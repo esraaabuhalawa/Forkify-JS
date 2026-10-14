@@ -1,5 +1,4 @@
 import View from './view.js';
-import icons from 'url:../../img/icons.svg';
 import placeholder from 'url:../../img/placeholder.jpg';
 
 class PreviewView extends View {
@@ -17,14 +16,12 @@ class PreviewView extends View {
             <h4 class="preview__title">${this._data.title}</h4>
             <p class="preview__publisher">${this._data.publisher}</p>
             <div class="recipe__user-generated ${this._data.key ? '' : 'hidden'}">
-              <svg>
-              <use href="${icons}#icon-user"></use>
-            </svg>
+              <i class="fa-solid fa-user" aria-hidden="true"></i>
            </div>
             </div>
         </a>
-        </li>`
-    }
+        </li>`;
+  }
 }
 
 export default new PreviewView();

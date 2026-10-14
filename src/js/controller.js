@@ -1,4 +1,4 @@
-//import icons from 'url:../img/icons.svg'; // Parcel 2
+import '@fortawesome/fontawesome-free/css/all.css';
 import 'core-js/stable'; // polyfilling everything else
 import 'regenerator-runtime/runtime'; // polyfilling async/await
 import * as model from './model.js';

@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir dist --public-url ./"
+    "build": "parcel build index.html --dist-dir dist"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.16.4",
     "parcel": "^2.16.4"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.3.1",
     "core-js": "^3.50.0",
     "fraction.js": "^5.3.4",
     "regenerator-runtime": "^0.14.1"
