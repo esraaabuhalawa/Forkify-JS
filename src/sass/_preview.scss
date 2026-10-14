@@ -117,3 +117,21 @@
     }
   }
 }
+
+@media only screen and (max-width: $bp-small) {
+
+  .preview__link:link,
+  .preview__link:visited {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .preview__fig {
+    margin-right: 1.25rem;
+  }
+
+  .preview__data,
+  .preview__title {
+    min-width: 0;
+    max-width: 100%;
+  }
+}

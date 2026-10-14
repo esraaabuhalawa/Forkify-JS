@@ -33,9 +33,9 @@ class RecipeView extends View {
       .map(
         ingredient => `
            <li class="recipe__ingredient">
-             <i class="recipe__icon fa-solid fa-check" aria-hidden="true"></i>
+            <i class="recipe__icon fa-solid fa-check" aria-hidden="true"></i>
   
-<div class="recipe__quantity">${ingredient.quantity ? new Fraction(ingredient.quantity).toFraction(true) : ''}</div>  
+            <div class="recipe__quantity">${ingredient.quantity ? new Fraction(ingredient.quantity).toFraction(true) : ''}</div>  
              <div class="recipe__description">
                <span class="recipe__unit">${ingredient.unit}</span>
                ${ingredient.description}

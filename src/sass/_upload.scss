@@ -5,7 +5,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100rem;
+  width: min(100rem, calc(100vw - 4rem));
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
   background-color: white;
   border-radius: 9px;
 
@@ -97,5 +99,36 @@
   &__btn {
     grid-column: 1 / -1;
     justify-self: center;
+  }
+}
+
+@media only screen and (max-width: $bp-medium) {
+  .add-recipe-window {
+    padding: 4rem;
+  }
+
+  .upload {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media only screen and (max-width: $bp-small) {
+  .add-recipe-window {
+    width: calc(100vw - 2rem);
+    padding: 4rem 1.5rem 2rem;
+  }
+
+  .upload__column {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2.8fr);
+    gap: 1rem;
+
+    input {
+      min-width: 0;
+    }
+  }
+
+  .upload__heading {
+    font-size: 1.8rem;
   }
 }

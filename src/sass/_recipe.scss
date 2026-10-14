@@ -83,7 +83,7 @@
   &__info-icon {
     height: 2.35rem;
     width: 2.35rem;
-    fill: $color-primary;
+    color: $color-primary;
     margin-right: 1.15rem;
   }
 
@@ -141,9 +141,8 @@
   }
 
   &__icon {
-    height: 2rem;
-    width: 2rem;
-    fill: $color-primary;
+    font-size: 1.8rem;
+    color: $color-primary;
     margin-right: 1.1rem;
     flex: 0 0 auto;
     margin-top: 0.1rem;
@@ -173,5 +172,63 @@
 
   &__publisher {
     font-weight: 700;
+  }
+}
+
+@media only screen and (max-width: $bp-medium) {
+  .recipe__details {
+    padding: 7rem 4rem 3rem;
+  }
+
+  .recipe__ingredients {
+    padding: 4rem;
+  }
+
+  .recipe__directions {
+    padding: 4rem 5rem;
+  }
+}
+
+@media only screen and (max-width: $bp-small) {
+  .recipe__fig {
+    height: 24rem;
+  }
+
+  .recipe__title {
+    width: calc(100% - 3rem);
+    font-size: 2.4rem;
+    line-height: 1.5;
+
+    span {
+      padding: 0.8rem 1.2rem;
+    }
+  }
+
+  .recipe__details {
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+    padding: 6rem 2rem 2.5rem;
+  }
+
+  .recipe__info:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .recipe__user-generated {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .recipe__ingredients {
+    padding: 3rem 2rem;
+  }
+
+  .recipe__ingredient-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .recipe__directions {
+    padding: 3rem 2rem;
   }
 }
