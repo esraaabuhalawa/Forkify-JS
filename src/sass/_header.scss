@@ -12,6 +12,78 @@
     height: 4.6rem;
     display: block;
   }
+
+  @media only screen and (max-width: $bp-medium) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.5rem;
+    padding: 1.5rem 2.5rem;
+
+    &__logo {
+      height: 4rem;
+      margin-left: 0;
+    }
+
+    .search {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      width: 100%;
+
+      &__field {
+        flex: 1;
+        min-width: 0;
+        width: 100%;
+      }
+    }
+
+    .nav {
+      grid-column: 2;
+      grid-row: 1;
+      margin-right: 0;
+      justify-self: end;
+
+      &__btn {
+        padding: 0 1rem;
+      }
+    }
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+
+    &__logo {
+      height: 3.4rem;
+    }
+
+    .search {
+      padding-left: 1.2rem;
+
+      &__field {
+        font-size: 1.5rem;
+      }
+
+      &__btn {
+        padding: 1rem 1.4rem;
+        font-size: 1.2rem;
+      }
+
+      &__icon {
+        font-size: 1.7rem;
+      }
+    }
+
+    .nav__btn {
+      padding: 0 0.5rem;
+      font-size: 1.1rem;
+
+      i {
+        font-size: 1.8rem;
+        margin-right: 0.4rem;
+      }
+    }
+  }
 }
 
 .search {
@@ -143,5 +215,10 @@
   .nav__btn--bookmarks:hover+& {
     visibility: visible;
     opacity: 1;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    right: 0;
+    width: min(40rem, calc(100vw - 2rem));
   }
 }
