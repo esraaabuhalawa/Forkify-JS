@@ -1,4 +1,3 @@
-import icons from 'url:../../img/icons.svg';
 import Fraction from 'fraction.js';
 import View from './view.js';
 import placeholder from 'url:../../img/placeholder.jpg';
@@ -8,10 +7,9 @@ class RecipeView extends View {
   _message = 'Start by searching for a recipe or an ingredient. Have fun!';
   _errorMessage = 'We could not find that recipe. Please try another one!';
 
- 
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
-  };
+  }
 
   addHandlerUpdateServings(handler) {
     this._parentElement.addEventListener('click', function (e) {
@@ -35,9 +33,7 @@ class RecipeView extends View {
       .map(
         ingredient => `
            <li class="recipe__ingredient">
-             <svg class="recipe__icon">
-               <use href="${icons}#icon-check"></use>
-             </svg>
+             <i class="recipe__icon fa-solid fa-check" aria-hidden="true"></i>
   
 <div class="recipe__quantity">${ingredient.quantity ? new Fraction(ingredient.quantity).toFraction(true) : ''}</div>  
              <div class="recipe__description">
@@ -59,42 +55,30 @@ class RecipeView extends View {
  
          <div class="recipe__details">
            <div class="recipe__info">
-             <svg class="recipe__info-icon">
-               <use href="${icons}#icon-clock"></use>
-             </svg>
+             <i class="recipe__info-icon fa-regular fa-clock" aria-hidden="true"></i>
              <span class="recipe__info-data recipe__info-data--minutes">${this._data.cookingTime}</span>
              <span class="recipe__info-text">minutes</span>
            </div>
            <div class="recipe__info">
-             <svg class="recipe__info-icon">
-               <use href="${icons}#icon-users"></use>
-             </svg>
+             <i class="recipe__info-icon fa-solid fa-users" aria-hidden="true"></i>
              <span class="recipe__info-data recipe__info-data--people">${this._data.servings}</span>
              <span class="recipe__info-text">servings</span>
  
              <div class="recipe__info-buttons">
                <button class="btn--tiny btn--increase-servings btn--update-servings" data-update-to="${this._data.servings - 1}">
-                 <svg>
-                   <use href="${icons}#icon-minus-circle"></use>
-                 </svg>
+                 <i class="fa-solid fa-circle-minus" aria-hidden="true"></i>
                </button>
                <button class="btn--tiny btn--increase-servings btn--update-servings" data-update-to="${this._data.servings + 1}">
-                 <svg>
-                   <use href="${icons}#icon-plus-circle"></use>
-                 </svg>
+                 <i class="fa-solid fa-circle-plus" aria-hidden="true"></i>
                </button>
              </div>
            </div>
  
            <div class="recipe__user-generated ${this._data.key ? '' : 'hidden'}">
-              <svg>
-              <use href="${icons}#icon-user"></use>
-            </svg>
+              <i class="fa-solid fa-user" aria-hidden="true"></i>
            </div>
            <button class="btn--round" data-bookmark>
-             <svg class="">
-               <use href="${icons}#icon-bookmark${this._data.bookmarked ? '-fill' : ''}"></use>
-             </svg>
+             <i class="${this._data.bookmarked ? 'fa-solid' : 'fa-regular'} fa-bookmark" aria-hidden="true"></i>
            </button>
          </div>
  
@@ -119,9 +103,7 @@ class RecipeView extends View {
              target="_blank"
            >
              <span>Directions</span>
-             <svg class="search__icon">
-               <use href="${icons}#icon-arrow-right"></use>
-             </svg>
+             <i class="search__icon fa-solid fa-arrow-right" aria-hidden="true"></i>
            </a>
          </div>
          `;

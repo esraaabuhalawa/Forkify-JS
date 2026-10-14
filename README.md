@@ -49,6 +49,7 @@ You will need Node.js and npm installed.
 - JavaScript modules
 - Parcel 2
 - Sass
+- Font Awesome Free
 - Forkify recipe API
 - `core-js`, `regenerator-runtime`, and `fraction.js`
 
